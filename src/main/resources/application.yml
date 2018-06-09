@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: HTML5
+
+  datasource:
+    url: jdbc:postgresql://52.80.50.148:15432/demotest
+    driver-class-name: org.postgresql.Driver
+    username: demo
+    password: demo
+

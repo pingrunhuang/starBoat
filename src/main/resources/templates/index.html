@@ -1,0 +1,55 @@
+<!--
+  ~ Copyright (c) 2018, Cardinal Operations and/or its affiliates. All rights reserved.
+  ~ CARDINAL OPERATIONS PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+  -->
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>StarBoat</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+   <!-- <script th:type="text/javascript">
+        $(document).$("#bb0011").click(function(){
+
+        })
+
+
+    </script> -->
+</head>
+
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h2>This is Cardinal Operations' StarBoat Project</h2>
+        </div>
+    </div>
+    <br>
+    <div id=""container>
+        <div id="content">
+            <table>
+                <tr>
+                    <th>杉数科技数据仓库</th>
+                </tr>
+
+                <tr th:each="db : ${dbs}">
+                    <form th:action="@{/table}" th:type="${db}" th:method="POST">
+                        <td id="db" th:text="${db}"></td>
+                    <td>
+                        <!--<a id="check" class="tz" href="/table">Check</a>-->
+                        <p><input type="submit" value="Check" /></p>
+                    </td>
+                    </form>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <a href="/index" class="tz">浏览全部数据库</a>
+
+</body>
+</html>
