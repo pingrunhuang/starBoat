@@ -4,13 +4,16 @@
  */
 package com.shanshu.ai.common;
 
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Frank Huang (runping@shanshu.ai)
@@ -108,6 +111,21 @@ public class DBUtils {
                 row.append(resultSet.getString(i)).append("|");
             }
             result.add(row.toString());
+        }
+        return result;
+    }
+
+
+    /**
+     * show table's columns
+     * */
+    public static Map<String, String> getColumns(String tablename) throws SQLException {
+        DatabaseMetaData metaData = conn.getMetaData();
+        ResultSet rsColumns =  metaData.getColumns(null, null, tablename, null);
+        Map<String, String> result = new HashMap<>();
+        while (rsColumns.next()) {
+            result.put(rsColumns.getString("COLUMN_NAME")
+                            ,rsColumns.getString("TYPE_NAME"));
         }
         return result;
     }

@@ -40,3 +40,4 @@ buildNumber.properties
 .idea/
 dataProcessor.iml
 src/main/resources/my.conf
+*/.DS_Store

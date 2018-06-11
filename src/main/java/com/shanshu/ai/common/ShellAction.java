@@ -13,7 +13,6 @@ import java.io.InputStreamReader;
  * @date 2018/01/24
  */
 public class ShellAction {
-
     public static String runShell(String path, String... args) throws IOException, InterruptedException {
         StringBuilder shellScript = new StringBuilder(path);
         for (String arg: args){
@@ -30,5 +29,4 @@ public class ShellAction {
         }
         return sb.toString();
     }
-
 }

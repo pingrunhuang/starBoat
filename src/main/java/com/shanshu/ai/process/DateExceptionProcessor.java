@@ -9,6 +9,7 @@ package com.shanshu.ai.process;
  * @date 2018/06/07
  */
 public class DateExceptionProcessor implements Processor{
+    @Override
     public void process() {
         System.out.println("Start processing...");
     }
